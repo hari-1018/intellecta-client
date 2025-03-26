@@ -21,6 +21,7 @@ import profile3 from "../assets/Review_3.jpg";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/NavbarLanding";
 import BlurText from "../components/TextAnimations/BlurText";
+import LandingImage from "../assets/LandingImages/landingFront.png"
 
 const Landing: React.FC = () => {
   const steps = [
@@ -63,12 +64,13 @@ const Landing: React.FC = () => {
   return (
     <>
     <Navbar/>
-    <div id="home" className="w-full h-screen flex items-center sm:justify-items-start text-white bg-overlay">
+    {/* landing page - 1 */}
+    <div id="home" className="w-full h-screen flex flex-wrap-reverse md:flex-nowrap items-center justify-center text-white bg-overlay bg-[#081a37] px-5 md:px-36">
       {/* Content */}
-      <div className="text-center sm:text-left sm:px-28">
+      <div className="text-center sm:text-left md:mb-16">
           <BlurText 
           text="Unlock Your Potential with AI Learning"
-          className="text-3xl justify-center sm:text-5xl font-bold mb-4" 
+          className="text-3xl justify-center md:justify-start sm:text-5xl font-bold mb-6 flex" 
           />
           <p className="text-lg sm:text-xl mb-6 max-w-2xl">
           Join Intellecta and experience AI-driven, personalized learning
@@ -79,22 +81,27 @@ const Landing: React.FC = () => {
           {/* Buttons */}
           <div className="flex gap-6 justify-center sm:justify-start">
           <Link to="/register">
-          <button className="bg-[#F7D232] hover:bg-yellow-500 text-black sm:justify-items-start font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300">
+          <button className="bg-[#F7D232] hover:bg-transparent hover:border-2 border-[#F7D232] hover:text-white text-black sm:justify-items-start font-semibold py-3 px-6 rounded-lg  ">
             Get Started
           </button>
           </Link>
-          <button className="border-2 border-[#F7D232] text-white font-semibold py-3 px-6 rounded-lg hover:bg-yellow-400 hover:text-black transition duration-300">
+          <button className="border-2 border-[#F7D232] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[#F7D232] hover:text-black transition duration-300">
             <a href="#works">See More</a>
           </button>
         </div>
       </div>
+      {/* image section */}
+        <div className="w-full h-[400px] md:w-[500px] md:h-[600px] flex justify-end items-center mb-8 md:mb-36">
+        <img src={LandingImage} alt="load" className="w-full h-full object-cover" />
+        </div>
     </div>
 
-    <div id="works" className="bg-[#0B1A36] py-20 text-white text-center bg-gradient-to-b from-[#081A37] to-[#3A6073]">
+      {/* landing page - else */}
+    <div id="works" className="bg-[#0B1A36] py-20 text-white text-center bg-gradient-to-b from-[#081A37] to-[#3A6073] ">
       {/* Section Title */}
-      <div className="h-[600px]">
-        <div className="mb-6">
-          <div className="inline-block px-4 py-2 bg-white text-black rounded-lg font-semibold">
+      <div className="h-[600px] py-5 md:px-36 px-5 ">
+        <div className="mb-6  ">
+          <div className="inline-block px-4 py-1 bg-white text-black rounded-lg font-semibold shadow-2xl">
           ⚙️ How It Works
           </div>
           <h2 className="text-3xl font-bold mt-4">How To Get Started</h2>
@@ -117,7 +124,7 @@ const Landing: React.FC = () => {
           </div>
 
           {/* Navigation Arrows */}
-          <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-10">
+          {/* <div className="absolute top-1/2 left-4 transform -translate-y-1/2 z-10">
             <button
             data-glide-dir="<"
             className="bg-white text-black p-3 rounded-full shadow-md hover:bg-gray-200"
@@ -132,14 +139,15 @@ const Landing: React.FC = () => {
             >
             ▶
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
+      {/* sliding-end */}
 
-      <div id="about" className="relative text-white py-20 px-6 md:px-16 lg:px-24">
+      <div id="about" className="relative text-white py-24 px-6 md:px-16 lg:px-24">
         {/* About Us */}
         <div className="mb-6">
-          <div className="inline-block px-4 py-2 bg-white text-black rounded-lg font-semibold">
+          <div className="inline-block px-4 py-1 bg-white text-black rounded-lg font-semibold shadow-2xl">
           ℹ️ About Us
           </div>
           <h2 className="text-3xl font-bold mt-4">What We Offer ?</h2>
@@ -160,7 +168,7 @@ const Landing: React.FC = () => {
           </div>
 
           {/* Image with Abstract Shape */}
-          <div className="lg:w-1/2 relative">
+          <div className="lg:w-1/2 relative md:block hidden">
             {/* Background Blob Image */}
             <img
               src={blob}
@@ -189,7 +197,7 @@ const Landing: React.FC = () => {
         {/* Section_2 */}
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-10">
           {/* Image with Abstract Shape */}
-          <div className="lg:w-1/2 relative">
+          <div className="lg:w-1/2 relative md:block hidden">
             {/* Background Blob Image */}
             <img
               src={blob}
@@ -199,7 +207,7 @@ const Landing: React.FC = () => {
 
             {/* Foreground Image (Above the Blob) */}
             <img
-              src={studentImage2} // Replace with the actual image
+              src={studentImage2} 
               alt="Happy Student"
               className="absolute top-1/2 left-1/2 transform -translate-x-[120px] -translate-y-[130px] -rotate-12 w-[225px] h-[225px] object-cover rounded-lg"
             />
@@ -241,7 +249,7 @@ const Landing: React.FC = () => {
           </div>
 
           {/* Image with Abstract Shape */}
-          <div className="lg:w-1/2 relative">
+          <div className="lg:w-1/2 relative md:block hidden">
             {/* Background Blob Image */}
             <img
               src={blob}
@@ -251,7 +259,7 @@ const Landing: React.FC = () => {
 
             {/* Foreground Image (Above the Blob) */}
             <img
-              src={studentImage3} // Replace with the actual image
+              src={studentImage3}
               alt="Happy Student"
               className="absolute top-1/2 left-1/2 transform -translate-x-[120px] -translate-y-[130px] -rotate-12 w-[225px] h-[225px] object-cover rounded-lg"
             />
@@ -265,7 +273,7 @@ const Landing: React.FC = () => {
         <div className="hidden lg:block absolute right-56 bottom-32 w-10 h-10 border-2 border-yellow-300 rotate-45 animate-spin"></div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-8">
+      <div className="max-w-6xl mx-auto px-6 flex flex-wrap justify-center gap-4 md:gap-8">
         
         {/* Card 1 */}
         <div className="w-40 h-40 bg-[#FFFFC1] rounded-lg flex flex-col justify-center items-center shadow-lg">
@@ -300,14 +308,14 @@ const Landing: React.FC = () => {
 
       <div className="py-20 px-4 md:py-24">
         <div className="mb-20">
-          <div className="inline-block px-4 py-2 bg-white text-black rounded-lg font-semibold">
+          <div className="inline-block px-4 py-1 bg-white text-black rounded-lg font-semibold">
           ⭐ Testimonials
           </div>
           <h2 className="text-3xl font-bold mt-4">Public Cheers For Us</h2>
         </div>
 
         {/* Testimonials Container */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-4">
         
         {/* Testimonial 1 */}
         <div className="relative p-6 bg-white rounded-lg shadow-lg pt-10 pb-10">
